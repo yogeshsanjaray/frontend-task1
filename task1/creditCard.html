@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Credit Card </title>
+		<link rel="stylesheet" href="style.css">
+		<script src="creditCard.js"></script>
+	</head>
+	<body>
+		<div class="checkout">
+			<div class="card-number" id="card-container">
+				<h1 class="card">Enter Your Card Details</h1>
+				<form class="form" onsubmit="add(event)" >
+					<div class="input-div">
+						<input type="text" class="input" name="input1" id="input1" placeholder="0000" minlength="0" maxlength = "4" pattern="[0-9]{4}" onkeyup="movetoNext(this, 'input2')">
+						<input type="text" class="input" name="input2" id="input2" placeholder="0000" minlength="0" maxlength = "4" pattern="[0-9]{4}" onkeyup="movetoNext(this, 'input3'), movetoPrev(this, 'input1')">
+						<input type="text" class="input" name="input3" id="input3" placeholder="0000" minlength="0" maxlength = "4" pattern="[0-9]{4}" onkeyup="movetoNext(this, 'input4'), movetoPrev(this, 'input2')">
+						<input type="text" class="input" name="input4" id="input4" placeholder="0000" minlength="0" maxlength = "4" pattern="[0-9]{4}" onkeyup="movetoPrev(this, 'input3')">
+					</div>
+                    <button id="submit-button">Submit</button>
+				</form>
+			</div>
+		</div>
+        <div id="res">
+            <div id="op">   
+            </div>
+        </div>
+		
+	</body>
+</html>
